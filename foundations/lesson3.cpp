@@ -180,8 +180,12 @@ void PrintBoard(const vector<vector<State>> board) {
 
 int main() {
   int init[2]{0, 0};
-  int goal[2]{4, 5};
+  int goal[2]{0, 5};
   auto board = ReadBoardFile("./board");
+  if (!(CheckValidCell(init[0], init[1], board)))
+        cout << "Initial position is not a valid cell\n";
+  if (!(CheckValidCell(goal[0], goal[1], board)))
+        cout << "Goal position is not a valid cell\n";
   PrintLegend();
   cout << "\nGiven grid:\n";
   PrintBoard(board);
