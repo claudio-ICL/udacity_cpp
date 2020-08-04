@@ -58,7 +58,7 @@ int main(int argc, const char **argv)
         std::cout << "Insert "<< pos << coord << ": ";
         std::cin >> se_coord[i];
         if ((se_coord[i]<0.0)|(se_coord[i]>100.0)){
-          std::cout << "User must insert values between 0 and 100, but";
+          std::cout << "User must insert values between 0 and 100, but ";
           std::cout << "given " << pos << coord << " is " << se_coord[i] << std::endl;
         } 
         assert ((se_coord[i]>=0.0)&(se_coord[i]<=100.0));
