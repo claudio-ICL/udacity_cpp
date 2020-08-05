@@ -1,0 +1,10 @@
+mytests/whole
+mytests/*
+CppND-System-Monitor/.gitignore
+CppND-System-Monitor/.git
+*/monitor
+*/a.out
+*/settings.json
+*/*.o
+*/build/*
+*/*.json
