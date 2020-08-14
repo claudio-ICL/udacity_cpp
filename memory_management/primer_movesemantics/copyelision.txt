@@ -1,0 +1,31 @@
+COMPILATION AND EXECUTION FROM TERMINAL 
+
++o+o+o+o+o+  My Version of g++   +o+o+o+o+o+
+(base) claudio@elitebook:primer_movesemantics$ g++ --version
+g++ (Ubuntu 8.4.0-1ubuntu1~18.04) 8.4.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
++o+o+o+o+o+ Compilation without flags +o+o+o+o+o+
+(base) claudio@elitebook:primer_movesemantics$ g++ main.cpp my_funs.cpp 
+(base) claudio@elitebook:primer_movesemantics$ ./a.out 
+Creating instance of MyClass at memory address 0x7ffd49ffbb80.  size_=0;    data_=0x564657e71e70
+Call to create_myclass:   Creating instance of MyClass at memory address 0x7ffd49ffbb90.  size_=10;    data_=0x564657e722a0
+Assigning to MyClass at memory address 0x7ffd49ffbb80 by moving from rvalue reference at memory address 0x7ffd49ffbb90.   size_=10;    data_=0x564657e722a0
+Destructing instance of MyClass at memory address 0x7ffd49ffbb90.  
+Reached return in main
+Destructing instance of MyClass at memory address 0x7ffd49ffbb80.  Freeing memory address 0x564657e722a0
+
++o+o+o+o+o+ Compilation with recommended flags +o+o+o+o+o+
+(base) claudio@elitebook:primer_movesemantics$ g++ -std=c++11 -fno-elide-constructors main.cpp my_funs.cpp 
+(base) claudio@elitebook:primer_movesemantics$ ./a.out 
+Creating instance of MyClass at memory address 0x7ffd4ccaf4d0.  size_=0;    data_=0x5653483ede70
+Call to create_myclass:   Creating instance of MyClass at memory address 0x7ffd4ccaf490.  size_=10;    data_=0x5653483ee2a0
+Instanciating MyClass at memory address 0x7ffd4ccaf4e0 by moving from rvalue reference at 0x7ffd4ccaf490.   size_=10;    data_=0x5653483ee2a0
+Destructing instance of MyClass at memory address 0x7ffd4ccaf490.  
+Assigning to MyClass at memory address 0x7ffd4ccaf4d0 by moving from rvalue reference at memory address 0x7ffd4ccaf4e0.   size_=10;    data_=0x5653483ee2a0
+Destructing instance of MyClass at memory address 0x7ffd4ccaf4e0.  
+Reached return in main
+Destructing instance of MyClass at memory address 0x7ffd4ccaf4d0.  Freeing memory address 0x5653483ee2a0
+
