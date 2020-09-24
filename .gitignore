@@ -5,3 +5,9 @@ gmail*.pdf
 coupon.txt
 OOP/primer_*
 */a.out
+**/build/*
+**build/
+**/project/**/build/*
+*/*/project/**/build/*
+
+
