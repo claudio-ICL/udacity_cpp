@@ -9,5 +9,7 @@ OOP/primer_*
 **build/
 **/project/**/build/*
 */*/project/**/build/*
-
+memory_management/project/provided/*
+*/project/*/.gitignore
+capstone/*
 
